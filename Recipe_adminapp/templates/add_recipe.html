@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    
+</head>
+<body>
+  <div class="container">
+    <form action="{% url 'recipedata' %}" method="post" style="text-align:center;" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleFormControlInput1" style="text-align:center;"><h4>Recipe name</h4></label>
+          <input type="text" name="recipe_name" class="form-control" id="exampleFormControlInput1" placeholder="text">
+        </div><br>
+        
+      <div class="form-group">
+        <input type="file" name="recipe_image">
+ </div>
+ <div class="form-group">
+    <label for="exampleFormControlTextarea1" style="text-align:center;"><h4><I>Instruction</I></h4></label>
+    <input type="textarea" name="instruction">
+  </div>
+  <br>
+  <label style="text-align:center;"><h4><I>Ingredients</I></h4></label>
+  <input type="text" name="ingredients"><br><br>
+
+<button style="text-align:center;">Submit</button>
+
+
+</form> 
+</div>
+</body>
+</html>

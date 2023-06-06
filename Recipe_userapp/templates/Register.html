@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>RECIPE</title>
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+<style>
+div{margin:10px;
+border:1px 
+}
+body{
+background-color:lightblue;
+}
+</style>
+<h1 style="text-align:center;"><b>Registration Form</b></h1><br>
+</head>
+<body>
+    <div class="container">
+        <form  action ="{% url 'registerdata' %}" method="post" style="text-align:center;">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="exampleFormControlInput1" style="text-align:center;"><h4><I>username</I></h4></label>
+              <input type="text" name="name">
+            </div>
+           <label for="exampleFormControlTextarea1" style="text-align:center;"><h4><I>Email</I></h4></label>
+           <input type="email" name="email">
+           <div class="form-group">
+           <label for="exampleFormControlTextarea1" style="text-align:center;"><h4><I>Password</I></h4></label>
+           <input type="text" name="password">
+           </div>
+      
+    <button style="text-align:center;">Register</button>
+    
+    
+    </form> 
+    </div>
+    
+</body>
+</html>

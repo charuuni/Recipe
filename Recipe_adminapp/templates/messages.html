@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <title>Recipe</title>
+   
+</head>
+<body>
+  <table>
+    <tr>
+        <th>Recipe name</th>
+        <th>Recipe image</th>
+        <th>Instruction</th>
+        <th>Ingredients</th>
+        <th>edit</th>
+        <th>delete</th>
+    </tr>
+    {% for i in key %}
+    <tr>
+        <td>{{i.recipe_name}} </td>
+        <td><img src="{{ i.recipe_image.url }}" style="width: 50px; height: 50px;"></td>
+        <td>{{i.instruction}}</td>
+        <td>{{i.ingredients}}</td>
+        <td><a href="{% url 'view_recipe' id=i.id %}"><button>Edit</button></a></td>
+        <td><i class='fas fa-edit'></i></td>
+        <td><a href="{% url 'delete' id=i.id %}"><button>Delete</button></a></td>
+        <td><i class="material-icons">delete</i></td>
+        
+    </tr>
+    {% endfor %}
+    
+    
+  </table>  
+  <br> <br>
+</body>
+</html>

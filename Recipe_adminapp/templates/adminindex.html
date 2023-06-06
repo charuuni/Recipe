@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>RECIPE</title>
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+<style>
+div{margin:10px;
+border:1px 
+}
+body{
+background-color:lightblue;
+}
+</style>
+<h1 style="text-align:center;"><b>HELLO...!</b></h1><br>
+</head>
+<div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{recipe}}</h5>
+          <p class="card-text">Total Recipes</p>
+          <a href="{% url 'messages' %}" class="btn btn-primary">more info</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{register}}</h5>
+          <p class="card-text">Total Registration</p>
+          <a href="{% url 'users' %}" class="btn btn-primary">more info</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{contact}}</h5>
+            <p class="card-text">Total Contact</p>
+            <a href="{% url 'viewcontact' %}" class="btn btn-primary">more info</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
+</html>
+

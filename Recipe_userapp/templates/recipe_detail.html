@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<title>RECIPES
+	</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+	
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        container {
+        margin: auto;
+        width: 1190px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        text-align: center;
+      }
+      *{background-color:light rgb(18, 98, 101);}
+</style>
+   
+</head>
+<body>
+    {% for i in data %}
+    <div class="container">
+        <div class="card">
+          <div class="col-sm-6 pt-3" style="width: 400px;">
+            <div class="card text-center pt-3">
+              <div class="card" style="width:18rem;">
+            <div class="card-body" style="color:rgb(203, 42, 147);text-align:center;"><h3><B>{{i.recipe_name}}</B></h3></div>    
+        </div>
+   
+        
+          
+                  <div class="box">		
+           
+          <div class="card-group">
+          
+                  <div class="col-sm-6 pt-3" style="width: 400px;">
+                  <div class="card text-center pt-3">
+                   
+                    <div class="card" style="width:18rem;">
+              <h3><b><I style="color:rgb(203, 42, 147);text-align:center;">Instructions</style></I></b></h3>
+              
+            <p class="card-text" style="color:green;">{{i.instruction}}</p></th>
+           <th> <h3><b><I style="color:rgb(203, 42, 147);text-align:center;">Ingredient</style></I></b></h3>
+            <p class="card-text">{{i.ingredients}}</p>
+      </div>
+           
+ </div>
+    
+      
+</div>
+{% endfor %}  
+  <br> <br>
+</body>
+</html>
+
