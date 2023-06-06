@@ -80,8 +80,7 @@ def getData(request):
         data=contact(name1=name_a,email1=email_a,message1=message_a)
         data.save()
         return redirect('usercontact')   
-def choice(request):
-    return HttpResponse('Hai')    
+
 
     
 
